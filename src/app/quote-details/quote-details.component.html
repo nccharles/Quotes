@@ -1,1 +1,17 @@
-<p>🖊️{{quote.author}} |🕘 Published {{quote.completeDate|dateCount}} days ago | <button class="btn" (click)= 'quoteDelete(true)'>❌</button></p>
+<div class="row">
+  <div class="col-md-8">
+    🖊️{{quote.author}} |🕘{{quote.completeDate|dateCount}} days ago
+  </div>
+  <div class="col-md-2">
+    <button class=" btn" (click)='voteUp()' type="submit">
+        <span class="glyphicon glyphicon-thumbs-u" aria-hidden="true"></span>
+        <span class="badge">{{upvote}}👍</span>
+      </button>
+  </div>
+  <div class="col-md-2">
+    <button (click)='voteDown()' class="btn" type="submit">
+      <span class="badge">{{downvote}}👎</span>
+    </button>
+  </div>
+</div>
+<button class="btn" (click)='quoteDelete(true)'>❌</button>
