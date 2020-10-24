@@ -1,11 +1,22 @@
 <div class="container">
   <h1>Inspiring quotes</h1>
   <hr>
-  <ul>
-    <div *ngFor='let q of Quotes;let i = index'>
-     <li appStrikethrough>{{q.name}}</li> 
-      <button (click)='toggleDetails(i)'>Details</button>
-      <app-quote-details [quote]='q'></app-quote-details>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="my-quote" *ngFor='let q of Quotes;let i = index'>
+        <div class="content">
+          <p appStrikethrough>{{q.quote}}</p>
+          <button class="btn btn-outline-warning" (click)='toggleDetails(i)'>Details</button>
+        </div>
+        <div *ngIf='q.showDescription'>
+          <app-quote-details [quote]='q' (isComplete)='deleteQuote($event,i)'>
+          </app-quote-details>
+        </div>
+
+      </div>
     </div>
-  </ul>
+    <div class="col-md-6">
+      <app-quote-form></app-quote-form>
+    </div>
+  </div>
 </div>
