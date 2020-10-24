@@ -3,7 +3,7 @@
   <hr>
   <ul>
     <div *ngFor='let q of Quotes;let i = index'>
-     <li>{{q.name}}</li> 
+     <li appStrikethrough>{{q.name}}</li> 
       <button (click)='toggleDetails(i)'>Details</button>
       <app-quote-details [quote]='q'></app-quote-details>
     </div>
