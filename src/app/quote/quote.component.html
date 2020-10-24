@@ -2,9 +2,10 @@
   <h1>Inspiring quotes</h1>
   <hr>
   <ul>
-    <li *ngFor='let q of Quotes'>
-      {{q.name}}
+    <div *ngFor='let q of Quotes;let i = index'>
+     <li>{{q.name}}</li> 
+      <button (click)='toggleDetails(i)'>Details</button>
       <app-quote-details [quote]='q'></app-quote-details>
-    </li>
+    </div>
   </ul>
 </div>
