@@ -4,12 +4,19 @@
 body {
     margin: 20px 10px 0px 10px;
     padding: 0px 16px 0px 16px;
-    background-image: url("assets/images/bg1.jpg");
+    background-image: url("assets/images/bg.jpg");
     background-attachment: fixed;
-    background-size: cover;
+    /* background-size: cover; */
+  }
+  .container{
+    padding: 20px;
+    height: 800px;
+    border-radius: 10px;
+    background-color: rgba(44, 62, 80,1.0);
+    box-shadow: 0 0 50px 0 rgba(253, 203, 110,0.2);
   }
   .my-quote{
-    box-shadow: 0 0 3px 0 rgba(0,0,0,0.75);
+   
     margin: 10px;
     padding: 10px;
     background-color: bisque;
