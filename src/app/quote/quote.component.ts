@@ -18,8 +18,29 @@ export class QuoteComponent implements OnInit {
       2,
       'Robyn Davidsony',
       'The two important things that I did learn were that you are as powerful and strong as you allow yourself to be, and that the most difficult part of any endeavour is taking the first step, making the first decision.',
-      'Charles',
+      'Yvette',
       new Date(2020, 10, 12)
+    ),
+    new Quote(
+      3,
+      'Sue Coleman-Haseldine',
+      'We are telling the story so that our history is not forgotten, but also to create a better future for all people, all over the world. This is why we want nuclear weapons permanently banned and the uranium that can create them left in the ground. The future forever belongs to the next generation.',
+      'Axel',
+      new Date(2020, 9, 12)
+    ),
+    new Quote(
+      4,
+      'Barbara Deming',
+      'Gandhi once declared that it was his wife who unwittingly taught him the effectiveness of nonviolence. Who better than women should know that battles can be won without resort to physical strength? Who better than we should know all the power that resides in noncooperation?',
+      'Ian',
+      new Date(2020, 10, 22)
+    ),
+    new Quote(
+      5,
+      'Janet Mock',
+      'I believe that telling our stories, first to ourselves and then to one another and the world, is a revolutionary act.',
+      'Charles',
+      new Date(2020, 9, 22)
     ),
   ];
 
@@ -29,7 +50,7 @@ export class QuoteComponent implements OnInit {
   deleteQuote(isComplete, index) {
     if (isComplete) {
       let toDelete = confirm(
-        `Are you sure you want to delete ${this.Quotes[index].quote}?`
+        `Are you sure you want to delete ${this.Quotes[index].author}'s quote?`
       );
 
       if (toDelete) {
@@ -38,7 +59,6 @@ export class QuoteComponent implements OnInit {
     }
   }
   addNewQuote(quote) {
-    console.log(quote);
     let quoteLength = this.Quotes.length;
     quote.id = quoteLength + 1;
     quote.publishedDate = new Date();
