@@ -1,11 +1,11 @@
-<div class="container bg-info">
+<div class="container">
   <h1 class="text-light">Inspiring quotes</h1>
   <hr>
   <div class="row">
     <div class="col-md-6">
       <div class="my-quote" *ngFor='let q of Quotes;let i = index'>
         <div class="content">
-          <p appStrikethrough>{{q.quote}}</p>
+          <p appTexthighlight>{{q.quote}}</p>
           <button class="btn btn-outline-info" (click)='toggleDetails(i)'>Details</button>
         </div>
         <div *ngIf='q.showDescription'>
