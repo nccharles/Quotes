@@ -10,10 +10,19 @@ body {
   }
   .container{
     padding: 20px;
-    height: 800px;
+    min-height: 800px;
     border-radius: 10px;
     background-color: rgba(44, 62, 80,1.0);
     box-shadow: 0 0 50px 0 rgba(253, 203, 110,0.2);
+  }
+  .agaseke{
+    padding: 0px 16px 0px 16px;
+    background-image: url("assets/images/bg1.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .btn{
+    margin: 10px 0;
   }
   .my-quote{
    
