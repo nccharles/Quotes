@@ -12,6 +12,8 @@ export class QuoteComponent implements OnInit {
       'Jacqui Katona',
       'People are going to have to take responsibility into their own hands. We can’t leave it in the hands of politicians and petty bureaucrats. All power and strength to the people. I reckon we’ll do it. Absolutely!',
       'Charles',
+      0,
+      0,
       new Date(2020, 10, 15)
     ),
     new Quote(
@@ -19,6 +21,8 @@ export class QuoteComponent implements OnInit {
       'Robyn Davidsony',
       'The two important things that I did learn were that you are as powerful and strong as you allow yourself to be, and that the most difficult part of any endeavour is taking the first step, making the first decision.',
       'Yvette',
+      0,
+      0,
       new Date(2020, 10, 12)
     ),
     new Quote(
@@ -26,6 +30,8 @@ export class QuoteComponent implements OnInit {
       'Sue Coleman-Haseldine',
       'We are telling the story so that our history is not forgotten, but also to create a better future for all people, all over the world. This is why we want nuclear weapons permanently banned and the uranium that can create them left in the ground. The future forever belongs to the next generation.',
       'Axel',
+      0,
+      0,
       new Date(2020, 9, 12)
     ),
     new Quote(
@@ -33,6 +39,8 @@ export class QuoteComponent implements OnInit {
       'Barbara Deming',
       'Gandhi once declared that it was his wife who unwittingly taught him the effectiveness of nonviolence. Who better than women should know that battles can be won without resort to physical strength? Who better than we should know all the power that resides in noncooperation?',
       'Ian',
+      0,
+      0,
       new Date(2020, 10, 22)
     ),
     new Quote(
@@ -40,6 +48,8 @@ export class QuoteComponent implements OnInit {
       'Janet Mock',
       'I believe that telling our stories, first to ourselves and then to one another and the world, is a revolutionary act.',
       'Charles',
+      0,
+      0,
       new Date(2020, 9, 22)
     ),
   ];
@@ -64,6 +74,21 @@ export class QuoteComponent implements OnInit {
     quote.publishedDate = new Date();
     this.Quotes.push(quote);
   }
+  first: number;
+  second: number;
+  counter: number;
+  Highestvote() {
+    this.first = 0;
+    this.second = 0;
+    for (this.counter = 0; this.counter < this.Quotes.length; this.counter++) {
+      this.second = this.Quotes[this.counter].like;
+      if (this.second > this.first) {
+        this.first = this.second;
+      }
+    }
+    return this.first;
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
