@@ -5,7 +5,8 @@
     <div class="col-md-6">
       <div class="my-quote" *ngFor='let q of Quotes;let i = index'>
         <div class="content">
-          <p appTexthighlight>{{q.quote}}</p>
+          <p appTexthighlight *ngIf='Highestvote()==q.like && q.like!==0'>{{q.quote}}</p>
+          <p *ngIf='Highestvote()!==q.like || q.like==0'>{{q.quote}}</p>
           <button class="btn btn-outline-info" (click)='toggleDetails(i)'>Details</button>
         </div>
         <div *ngIf='q.showDescription'>

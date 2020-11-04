@@ -1,22 +1,12 @@
-import { Directive,ElementRef,HostListener } from '@angular/core';
+import { Directive,ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appTexthighlight]'
 })
 export class TexthighlightDirective {
 
-  constructor(private elem:ElementRef){}
-
-  @HostListener("click") onClicks(){
-    this.textDeco("#FFCD0F")
+  constructor(private elem:ElementRef){
+    this.elem.nativeElement.style.backgroundColor="#FFCD0F"
   }
 
-  @HostListener("dblclick") onDoubleClicks(){
-    this.textDeco("transparent")
-  }
-
-  private textDeco(action:string){
-    this.elem.nativeElement.style.backgroundColor=action;
-
-  }
 }
